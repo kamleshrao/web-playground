@@ -12,6 +12,42 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
     <!-- CDN - End -->
 
+    <style>
+        body {
+          background-color:lightgray;
+        }
+        /*
+        [type="file"] {
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute !important;
+        white-space: nowrap;
+        width: 1px;
+        }
+
+        [type="file"] + label {
+        background-color: #000;
+        border-radius: 4rem;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        padding-left: 2rem 4rem;
+        }
+
+        [type="file"]:focus + label,
+        [type="file"] + label:hover {
+            background-color: #f15d22;
+        }
+
+        [type="file"]:focus + label {
+        outline: 1px dotted #000;
+        }
+        */
+    </style>
+
     <script>
         $(function(){
             //alert('Ready');
@@ -27,11 +63,11 @@
 
             if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
                 //alert('mobile');
-                $("#btnCamera").attr("disabled", false);
+                //$("#btnCamera").attr("disabled", false);
             }
             else {
                 //lert('desktop');
-                $("#btnCamera").attr("disabled", true);
+                //$("#btnCamera").attr("disabled", true);
             }
 
         });
@@ -75,12 +111,12 @@
                 <label for="remarks">Remarks</label>
                 <textarea id="remarks" class="form-control" rows="3" placeholder="Enter your remarks" required></textarea>
             </div>
-            <button type="button" id="btnCamera" class="btn btn-info btn-lg">Camera</button>
-            &nbsp;&nbsp;&nbsp;
-            <button type="button" id="btnBrowse" class="btn btn-info btn-lg">Browse</button>
-            &nbsp;&nbsp;&nbsp;
+            <div class="custom-file mt-3 mb-3">
+                <input type="file" class="custom-file-input" id="file" accept="image/*;capture=camera">
+                <label class="custom-file-label" for="file">Photo</label>
+            </div>
             <button type="button" id="btnClose" class="btn btn-info btn-lg">Close</button>
-          </form>
+        </form>
     </div>
 
 
